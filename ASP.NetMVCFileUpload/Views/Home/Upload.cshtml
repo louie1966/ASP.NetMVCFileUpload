@@ -1,8 +1,15 @@
-﻿
+﻿@using ASP.NetMVCFileUpload.HTMLHelpers
+
 @{
     ViewBag.Title = "Upload";
 }
 
-<h2>File uploadlocation:</h2>
-<h4>@ViewBag.Path</h4>
+<h2>UploadFiles</h2>
 
+<ul>
+    @{
+        foreach (ViewDataUploadFilesResult v in this.ViewData.Model) {
+            <li>@v.Name (@v.Length)</li>
+        }
+    }
+</ul>
